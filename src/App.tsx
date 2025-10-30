@@ -24,9 +24,9 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <Analytics />
-        <QuickContactButtons />
         <BrowserRouter>
+          <Analytics />
+          <QuickContactButtons />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/login" element={<Login />} />
