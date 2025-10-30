@@ -16,18 +16,18 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Услуги</h4>
+            <h4 className="font-semibold mb-4 text-white">Услуги</h4>
             <div className="space-y-2 text-sm">
               <a href="#services" className="block text-gray-400 hover:text-primary transition-colors">Продать квартиру</a>
               <a href="#services" className="block text-gray-400 hover:text-primary transition-colors">Купить недвижимость</a>
-              <Link to="/app" className="block text-gray-400 hover:text-primary transition-colors">Мобильное приложение</Link>
+              <Link to="/mobile-app" className="block text-gray-400 hover:text-primary transition-colors">Мобильное приложение</Link>
               <a href="#faq" className="block text-gray-400 hover:text-primary transition-colors">FAQ</a>
               <a href="#contacts" className="block text-gray-400 hover:text-primary transition-colors">Контакты</a>
             </div>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Контакты</h4>
-            <div className="space-y-3 text-sm text-gray-400">
+            <h4 className="font-semibold mb-4 text-white">Контакты</h4>
+            <div className="space-y-3 text-sm text-gray-300">
               <div className="flex items-center gap-2">
                 <Icon name="Phone" size={16} className="text-primary" />
                 <a href="tel:+79805557580" className="hover:text-primary transition-colors">+7 980 555 75 80</a>
@@ -38,20 +38,33 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Icon name="MapPin" size={16} className="text-primary" />
-                <span>Московский пр-т, 114 В, офис 200</span>
+                <span>г. Воронеж, Московский пр-т д. 114 В, офис 200</span>
+              </div>
+              <div className="flex items-center gap-4 mt-4">
+                <a href="https://vk.com/yurnedv" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  <Icon name="Contact" size={20} />
+                  <span className="ml-1 text-sm">VK</span>
+                </a>
+                <a href="https://t.me/yurnedv" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-1">
+                  <Icon name="Send" size={20} />
+                  <span className="text-sm">Telegram</span>
+                </a>
               </div>
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-800 pt-8 text-center">
-          <div className="flex flex-wrap justify-center gap-4 mb-4 text-sm text-gray-400">
+        <div className="border-t border-gray-800 pt-8">
+          <p className="text-sm text-gray-500 text-center mb-4">
+            © ЮР недвижимость, 2024. Все права защищены.
+          </p>
+          <p className="text-sm text-gray-600 text-center mb-4">
+            ИНН 3662311194 • ОГРН 1243600013359
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
             <Link to="/privacy-policy" className="hover:text-primary transition-colors">Политика конфиденциальности</Link>
             <Link to="/user-agreement" className="hover:text-primary transition-colors">Пользовательское соглашение</Link>
             <Link to="/personal-data-consent" className="hover:text-primary transition-colors">Согласие на обработку данных</Link>
           </div>
-          <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} ООО ЮРИЭЛТИ (ИНН 3662311194). Все права защищены.
-          </p>
         </div>
       </div>
     </footer>
