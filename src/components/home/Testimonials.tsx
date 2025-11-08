@@ -28,6 +28,27 @@ export default function Testimonials() {
       rating: 5,
       text: 'Несмотря на очень сложную ситуацию с покупкой квартиры, множество подводных камней и постоянно меняющиеся обстоятельства, Оля всегда была на связи, помогла решить все возникающие вопросы. Профессиональный подход, четкое планирование и соблюдение всех договоренностей. Рекомендую!',
       date: '15.07.2024'
+    },
+    {
+      name: 'Мария',
+      service: 'Продажа квартиры',
+      rating: 5,
+      text: 'Очень благодарна Ольге за профессионализм и внимательность. Продажа квартиры прошла быстро и без проблем. Всегда на связи, все вопросы решались оперативно.',
+      date: '10.06.2024'
+    },
+    {
+      name: 'Дмитрий',
+      service: 'Покупка квартиры в новостройке',
+      rating: 5,
+      text: 'Отличный специалист! Помогла с выбором квартиры, проверкой всех документов и оформлением сделки. Все прошло гладко, рекомендую!',
+      date: '05.05.2024'
+    },
+    {
+      name: 'Екатерина',
+      service: 'Обмен квартиры',
+      rating: 5,
+      text: 'Сложная альтернативная сделка была проведена безупречно. Ольга координировала все этапы, держала в курсе событий. Спасибо за работу!',
+      date: '20.04.2024'
     }
   ];
 
@@ -35,7 +56,17 @@ export default function Testimonials() {
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-4 animate-on-scroll">Отзывы клиентов</h2>
-        <p className="text-center text-gray-600 mb-12 animate-on-scroll">Что говорят о нас наши клиенты</p>
+        <div className="text-center mb-8">
+          <a 
+            href="https://www.avito.ru/brands/i158777231552/all/otzyvy?src=sharing" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium text-lg"
+          >
+            <Icon name="ExternalLink" size={20} />
+            Посмотреть все отзывы на Авито
+          </a>
+        </div>
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {testimonials.map((testimonial, i) => (
             <Card key={i} className="hover:shadow-xl transition-shadow animate-on-scroll">
@@ -55,24 +86,13 @@ export default function Testimonials() {
             </Card>
           ))}
         </div>
-        <div className="text-center space-y-4">
+        <div className="text-center">
           <Button 
             onClick={() => setShowReviewForm(!showReviewForm)}
             className="bg-primary hover:bg-primary/90"
           >
             {showReviewForm ? 'Скрыть форму' : 'Оставить отзыв'}
           </Button>
-          <div>
-            <a 
-              href="https://www.avito.ru/brands/i158777231552/all/otzyvy?src=sharing" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
-            >
-              <Icon name="ExternalLink" size={20} />
-              Посмотреть все отзывы на Авито
-            </a>
-          </div>
         </div>
         {showReviewForm && <ReviewForm />}
       </div>
