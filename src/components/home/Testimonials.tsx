@@ -55,13 +55,24 @@ export default function Testimonials() {
             </Card>
           ))}
         </div>
-        <div className="text-center">
+        <div className="text-center space-y-4">
           <Button 
             onClick={() => setShowReviewForm(!showReviewForm)}
             className="bg-primary hover:bg-primary/90"
           >
             {showReviewForm ? 'Скрыть форму' : 'Оставить отзыв'}
           </Button>
+          <div>
+            <a 
+              href="https://www.avito.ru/brands/i158777231552/all/otzyvy?src=sharing" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+            >
+              <Icon name="ExternalLink" size={20} />
+              Посмотреть все отзывы на Авито
+            </a>
+          </div>
         </div>
         {showReviewForm && <ReviewForm />}
       </div>
