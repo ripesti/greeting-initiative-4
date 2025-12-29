@@ -64,7 +64,7 @@ export default function ApplicationForm({ services }: ApplicationFormProps) {
         ? `\n\nПрикрепленные файлы (${files.length}):\n${files.map(f => f.name).join(', ')}`
         : '';
 
-      const response = await fetch('https://functions.poehali.dev/680c3b01-9d4e-4dee-a366-4c371d7942aa', {
+      const response = await fetch('https://functions.poehali.dev/6c9f7d6c-eeec-46db-aad8-3a1805f28a29', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

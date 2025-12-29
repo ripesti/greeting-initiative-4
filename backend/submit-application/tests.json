@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "name": "Test application submission",
+      "method": "POST",
+      "body": {
+        "name": "Иван Иванов",
+        "phone": "+79991234567",
+        "email": "test@example.com",
+        "service": "Покупка квартиры",
+        "message": "Хочу купить квартиру",
+        "status": "new"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "message": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test OPTIONS request",
+      "method": "OPTIONS",
+      "expectedStatus": 200
+    }
+  ]
+}
