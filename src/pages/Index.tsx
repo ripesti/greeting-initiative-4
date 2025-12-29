@@ -5,7 +5,6 @@ import HeroSection from '@/components/home/HeroSection';
 import AboutUs from '@/components/home/AboutUs';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import ServicesSection from '@/components/home/ServicesSection';
-import PropertiesBoard from '@/components/home/PropertiesBoard';
 import Testimonials from '@/components/home/Testimonials';
 import GuaranteeSection from '@/components/home/GuaranteeSection';
 import StepsSection from '@/components/home/StepsSection';
@@ -100,7 +99,6 @@ export default function Index() {
         <AboutUs />
         <WhyChooseUs />
         <ServicesSection services={services} onServiceClick={handleServiceClick} />
-        <PropertiesBoard />
         <Testimonials />
         <GuaranteeSection />
         <StepsSection />
