@@ -37,7 +37,7 @@ export default function Testimonials() {
         <h2 className="text-4xl font-bold text-center mb-4 animate-on-scroll">Отзывы клиентов</h2>
         <div className="text-center mb-8">
           <a 
-            href="https://www.avito.ru/brands/i158777231552/all/otzyvy?src=sharing" 
+            href="https://www.avito.ru/brands/i104252085/all/predlozheniya_uslug?src=fs&page_from=from_favorite_sellers&sellerId=35321816dfaa3718efefb2ba72215fc5" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium text-lg"
