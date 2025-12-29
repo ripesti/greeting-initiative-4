@@ -1,6 +1,7 @@
 import json
 import os
 from datetime import datetime
+import psycopg2
 
 def handler(event: dict, context) -> dict:
     '''API для приема заявок и отзывов с сайта'''
@@ -41,7 +42,25 @@ def handler(event: dict, context) -> dict:
         status = body.get('status', 'new')
         user_id = body.get('user_id')
         
+        conn = psycopg2.connect(os.environ['DATABASE_URL'])
+        cursor = conn.cursor()
+        
+        cursor.execute('''
+            INSERT INTO applications (name, phone, email, service, message, status, user_id)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
+            RETURNING id, created_at
+        ''', (name, phone, email, service, message, status, user_id))
+        
+        result = cursor.fetchone()
+        application_id = result[0]
+        created_at = result[1]
+        
+        conn.commit()
+        cursor.close()
+        conn.close()
+        
         application_data = {
+            'id': application_id,
             'name': name,
             'phone': phone,
             'email': email,
@@ -49,10 +68,10 @@ def handler(event: dict, context) -> dict:
             'message': message,
             'status': status,
             'user_id': user_id,
-            'created_at': datetime.now().isoformat()
+            'created_at': created_at.isoformat()
         }
         
-        print(f"Новая заявка: {json.dumps(application_data, ensure_ascii=False)}")
+        print(f"Новая заявка #{application_id}: {json.dumps(application_data, ensure_ascii=False)}")
         
         return {
             'statusCode': 200,
